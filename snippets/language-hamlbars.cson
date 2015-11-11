@@ -1,0 +1,28 @@
+'.source.hamlbars':
+  'each':
+    'prefix': 'each'
+    'body': '{{#each $1}}\n$2\n{{/each}}'
+  'if':
+    'prefix': 'if'
+    'body': '{{#if $1}}\n$2\n{{/if}}'
+  'else':
+    'prefix': 'else'
+    'body': '{{else}}'
+  'if-else':
+    'prefix': 'ifelse'
+    'body': '{{#if $1}}\n$2\n{{else}}\n$3\n{{/if}}'
+  'with':
+    'prefix': 'with'
+    'body': '{{#with $1}}\n$2\n{{/with}}'
+  'unless':
+    'prefix': 'unless'
+    'body': '{{#unless $1}}\n$2\n{{/unless}}'
+  'partial':
+    'prefix': 'partial'
+    'body': '{{> $1}}'
+  'lookup':
+    'prefix': 'lookup'
+    'body': '{{lookup ${1:obj} ${2:key}}}'
+  'log':
+    'prefix': 'log'
+    'body': '{{log "${1:output}"}}'
