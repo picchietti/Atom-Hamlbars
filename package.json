@@ -5,9 +5,6 @@
   "description": "Hamlbars language package for Atom",
   "keywords": [
   ],
-  "activationCommands": {
-    "atom-workspace": "hamlbars:toggle"
-  },
   "repository": "https://github.com/picchietti/Atom-Hamlbars",
   "license": "MIT",
   "engines": {
