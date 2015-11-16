@@ -55,6 +55,7 @@
 		]
 
 	'comments':
+		'comment': 'Merge with block_comments above?'
 		'patterns': [
 			{
 				'begin': '\\{\\{![^<]'
@@ -66,20 +67,6 @@
 						'name': 'keyword.annotation.hamlbars'
 					}
 					{'include': '#comments'}
-				]
-			}
-			{
-				'begin': '<!--'
-				'captures':
-					'0':
-						'name': 'punctuation.definition.comment.html'
-				'end': '-{2,3}\\s*>'
-				'name': 'comment.block.html'
-				'patterns': [
-					{
-						'match': '--'
-						'name': 'invalid.illegal.bad-comments-or-CDATA.html'
-					}
 				]
 			}
 		]
@@ -201,8 +188,10 @@
 								'endCaptures':
 									'0':
 										'name': 'string.quoted.double.hamlbars'
+								'comment': 'String interpolation highlighting'
 								'patterns': [
 									{
+										'comment': 'backtracking problem here... nested quantifiers?'
 										'begin': '(\\{{2,3})[ ]*([a-zA-Z0-9\\._-]*?)([ ]|\\})'
 										'beginCaptures':
 											'1':
@@ -258,6 +247,7 @@
 				'name': 'meta.prolog.hamlbars'
 			}
 			{
+				'comment': '/ comments for a single line'
 				'captures':
 					'1':
 						'name': 'punctuation.section.comment.hamlbars'
@@ -265,15 +255,13 @@
 				'name': 'comment.line.slash.hamlbars'
 			}
 			{
+				'comment': '/ comments for a block'
 				'begin': '^( *)(/)\\s*$'
 				'beginCaptures':
 					'2':
 						'name': 'punctuation.section.comment.hamlbars'
 				'end': '^(?!\\1  )'
 				'name': 'comment.block.hamlbars'
-				'patterns': [
-					{'include': 'text.hamlbars'}
-				]
 			}
 			{
 				'captures':
@@ -305,11 +293,13 @@
 		'patterns': [
 			{'include': '#string'}
 		]
+
 	'string':
 		'patterns': [
 			{'include': '#string-single-quoted'}
 			{'include': '#string-double-quoted'}
 		]
+
 	'string-double-quoted':
 		'begin': "\""
 		'beginCaptures':
@@ -346,44 +336,6 @@
 			{'include': '#block_helper'}
 			{'include': '#end_block'}
 			{'include': '#partial_and_var'}
-		]
-
-	'tag-stuff':
-		'patterns': [
-			{'include': '#tag_id_attribute'}
-			{'include': '#tag_generic_attribute'}
-			{'include': '#string'}
-			{'include': '#block_comments'}
-			{'include': '#comments'}
-			{'include': '#block_helper'}
-			{'include': '#end_block'}
-			{'include': '#partial_and_var'}
-		]
-
-	'tag_generic_attribute':
-		'begin': '\\b([a-zA-Z0-9_-]+)\\b\\s*(=)'
-		'captures':
-			'1':
-				'name': 'entity.other.attribute-name.generic.html'
-			'2':
-				'name': 'punctuation.separator.key-value.html'
-		'end': "(?<='|\"|)"
-		'name': 'entity.other.attribute-name.html'
-		'patterns': [
-			{'include': '#string'}
-		]
-
-	'tag_id_attribute':
-		'begin': '\\b(id)\\b\\s*(=)'
-		'captures':
-			'1':
-				'name': 'entity.other.attribute-name.id.html'
-			'2':
-				'name': 'punctuation.separator.key-value.html'
-		'end': "(?<='|\"|)"
-		'name': 'meta.attribute-with-value.id.html'
-		'patterns': [
-			{'include': '#string'}
 		]
 
 	'yfm':
