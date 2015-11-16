@@ -22,6 +22,18 @@
 			{'include': '#end_block'}
 			{'include': '#partial_and_var'}
 			{'include': '#entities'}
+			{'include': '#doctype'}
+		]
+
+	'doctype':
+		'patterns':	[
+			'match': '^(!!!)($|\\s.*)'
+			'name': 'meta.tag.doctype.hamlbars'
+			'captures':
+				'1':
+					'name': 'entity.name.tag.hamlbars'
+				'2':
+					'name': 'entity.name.tag.hamlbars'
 		]
 
 	'block_comments':
@@ -238,13 +250,6 @@
 				'patterns': [
 					{'include': '#interpolated_ruby'}
 				]
-			}
-			{
-				'captures':
-					'1':
-						'name': 'punctuation.definition.prolog.hamlbars'
-				'match': '^(!!!)($|\\s.*)'
-				'name': 'meta.prolog.hamlbars'
 			}
 			{
 				'comment': '/ comments for a single line'
