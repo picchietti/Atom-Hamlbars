@@ -13,6 +13,7 @@
 'repository':
 	'main':
 		'patterns': [
+			{'include': '#all_filters'}
 			{'include': '#dash-hash-comments'}
 			{'include': '#hamlbars'}
 			{'include': '#yfm'}
@@ -346,5 +347,107 @@
 				'patterns': [
 					{'include': 'source.yaml'}
 				]
+			}
+		]
+
+	'all_filters':
+		'patterns': [
+			{
+				'begin': '^(\\s*)(:javascript)$'
+				'beginCaptures':
+					'2':
+						'name': 'entity.name.tag.embedded.javascript'
+				'end': '^(?!\\1\\s+)'
+				'patterns': [
+					{'include': 'source.js'}
+				]
+			}
+			{
+				'begin': '^(\\s*)(:coffee)$'
+				'beginCaptures':
+					'2':
+						'name': 'entity.name.tag.embedded.coffeescript'
+				'end': '^(?!\\1\\s+)'
+				'patterns': [
+ 					{'include': 'source.coffee'}
+				]
+			}
+			{
+				'begin': '(^\\s*)(:css)$'
+				'beginCaptures':
+					'2':
+						'name': 'entity.name.tag.embedded.css'
+				'end': '^(?!\\1\\s+)'
+				'patterns': [
+ 					{'include': 'source.css'}
+				]
+			}
+			{
+				'begin': '(^\\s*)(:less)$'
+				'beginCaptures':
+					'2':
+						'name': 'entity.name.tag.embedded.less'
+				'end': '^(?!\\1\\s+)'
+				'patterns': [
+ 					{'include': 'source.css.less'}
+				]
+			}
+			{
+				'begin': '(^\\s*)(:scss)$'
+				'beginCaptures':
+					'2':
+						'name': 'entity.name.tag.embedded.sass'
+				'end': '^(?!\\1\\s+)'
+				'patterns': [
+ 					{'include': 'source.css.scss'}
+				]
+			}
+			{
+				'begin': '(^\\s*)(:sass)$'
+				'beginCaptures':
+					'2':
+						'name': 'entity.name.tag.embedded.sass'
+				'end': '^(?!\\1\\s+)'
+				'patterns': [
+ 					{'include': 'source.sass'}
+				]
+			}
+			{
+				'begin': '(^\\s*)(:markdown)$'
+				'beginCaptures':
+					'2':
+						'name': 'entity.name.tag.embedded.markdown'
+				'end': '^(?!\\1\\s+)'
+				'patterns': [
+ 					{'include': 'source.gfm'}
+				]
+			}
+			{
+				'begin': '(^\\s*)(:erb)$'
+				'beginCaptures':
+					'2':
+						'name': 'entity.name.tag.embedded.erb'
+				'end': '^(?!\\1\\s+)'
+				'patterns': [
+ 					{'include': 'text.html.erb'}
+				]
+			}
+			{
+				'begin': '(^\\s*)(:ruby)$'
+				'beginCaptures':
+					'2':
+						'name': 'entity.name.tag.embedded.ruby'
+				'end': '^(?!\\1\\s+)'
+				'patterns': [
+ 					{'include': 'source.ruby'}
+				]
+			}
+			{
+				'begin': '(^\\s*)(:(?:preserve|escaped|plain|cdata))$'
+				'beginCaptures':
+					'2':
+						'name': 'entity.name.tag.embedded.other'
+				'end': '^(?!\\1\\s+)'
+				'contentName': 'none'
 			}
 		]
