@@ -1,5 +1,5 @@
-# hamlbars package
+Atom syntax definitions for the hamlbars language.
 
-A short description of your package.
+Currently in *public beta* phase.
 
-![A screenshot of your package](https://f.cloud.github.com/assets/69169/2290250/c35d867a-a017-11e3-86be-cd7c5bf3ff9b.gif)
+This is a manual port of Greplytix's Sublime Text  [Hamlbars](https://github.com/greplytix/Hamlbars). Copyright (c) 2014 Greplytix.

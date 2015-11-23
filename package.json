@@ -1,15 +1,20 @@
 {
   "name": "language-hamlbars",
-  "main": "./lib/hamlbars",
-  "version": "0.0.0",
   "description": "Hamlbars language package for Atom",
   "keywords": [
+    "hamlbars"
   ],
-  "repository": "https://github.com/picchietti/Atom-Hamlbars",
+
+  "version": "1.0.0",
   "license": "MIT",
+
+  "repository": "https://github.com/picchietti/Atom-Hamlbars",
   "engines": {
-    "atom": ">=1.0.0 <2.0.0"
+    "atom": "*"
   },
-  "dependencies": {
+
+  "author":{
+    "name" : "Jon Picchietti",
+    "email" : "jon@picchietti.email"
   }
 }

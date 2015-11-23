@@ -200,7 +200,6 @@
 									"0":
 										'name': 'string.quoted.double.hamlbars'
 								'end': '\\1'
-								# 'end': '[^\\\\]\\1'
 								'endCaptures':
 									'0':
 										'name': 'string.quoted.double.hamlbars'
@@ -222,7 +221,7 @@
 									}
 								]
 							}
-							{'include': 'source.ruby.rails'}
+							{'include': 'source.ruby'}
 							{'include': '#continuation'}
 						]
 					}
@@ -231,7 +230,7 @@
 						'end': '\\]|$|^(?!.*\\|\\s*$)'
 						'name': 'meta.section.object.hamlbars'
 						'patterns': [
-							{'include': 'source.ruby.rails'}
+							{'include': 'source.ruby'}
 							{'include': '#continuation'}
 						]
 					}
@@ -273,7 +272,7 @@
 				'begin': '^\\s*(?==|-|~)'
 				'end': '$'
 				'patterns': [
-					{'include': '#rubyline'}
+					{'include': 'source.ruby'}
 				]
 			}
 		]
